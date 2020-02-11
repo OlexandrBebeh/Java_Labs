@@ -34,5 +34,42 @@ public class studentRecordBook {
         MiddleMark = middleMark;
     }
 
+    public byte getCourse() {
 
+        return Course;
+    }
+
+    public int getNumber() {
+
+        return Number;
+    }
+
+    public String getFatherland() {
+
+        return Fatherland;
+    }
+
+    public float getMiddleMark() {
+
+        return MiddleMark;
+    }
+
+    public String[] getOffset() {
+
+        return Offset;
+    }
+
+    public String[] getExams() {
+
+        return Exams;
+    }
+
+    public String getForename() {
+        return Forename;
+    }
+
+    public String getSurname() {
+
+        return Surname;
+    }
 }
