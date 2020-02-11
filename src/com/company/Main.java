@@ -1,10 +1,31 @@
 package com.company;
 
 
+import java.util.Random;
+
 public class Main {
 
-    public static studentRecordBook[] FillTheObjects(studentRecordBook[] list){
+    public static String[] ExamsAndOffsets() {
+        final Random random = new Random();
+        String[] Subjects = {"History ","Math ","English ","Analysis ","Informatics ","Algorithms ", "Physics "}; // 7
+        String[] result = new String[3];
+        int[] used = {-1,-1};
+        for (int i=0;i<3;i++){
+            int number = random.nextInt(Subjects.length);
+            if(number == used[0] || number == used[1]) {
+                i--;
+            } else{
 
+                result[i]=Subjects[number];
+                if(i == 2) break;
+                used[i]=number;
+            }
+
+        }
+        return result;
+    }
+    public static studentRecordBook[] FillTheObjects(studentRecordBook[] list){
+        final Random random = new Random();
         String[] Names = {"Olexandr", "Kostya", "Roman","Kasparas","Emil",
                 "Hannah","Madison","Ashley","Sarah","Alexis",
                 "Samant", "Jessic","Elizabeth","Taylor","Lauren",
@@ -21,6 +42,22 @@ public class Main {
                 "Jessicovich","Elizabethovich","Taylorovich","Laurenovich","Alyssovich",
                 "Kaylovich","Abigailovich","Brianovich","Oliviyovich","Emovich",
                 "Megatronovich","Gracovich","Victoriyovich","Rachelovich"}; //24
+
+        for(int i=0;i<list.length;i++) {
+
+            list[i] = new studentRecordBook(
+                    Names[random.nextInt(Names.length)],
+                    Forenames[random.nextInt(Forenames.length)],
+                    Fatherlands[random.nextInt(Fatherlands.length)],
+                    random.nextInt(100000),
+                    (byte) (random.nextInt(5)+1),
+                    ExamsAndOffsets(),
+                    ExamsAndOffsets(),
+                    (float) (random.nextFloat()*2+3)
+            );
+            System.out.println(list[i].toString());
+        }
+
         return  list;
     }
 
