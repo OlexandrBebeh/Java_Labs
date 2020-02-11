@@ -72,4 +72,16 @@ public class studentRecordBook {
 
         return Surname;
     }
+
+    public String toString() {
+        String ExamsToString = " ";
+        for( int i=0 ; i<Exams.length ; i++ ){
+            ExamsToString = ExamsToString + Exams[i]+" ";
+        }
+        String OffsetToString = " ";
+        for( int i=0 ; i<Exams.length ; i++){
+            OffsetToString = OffsetToString + Exams[i]+" ";
+        }
+        return Surname + " | " + Forename + " | " + Fatherland + " | " + Number + " | " + Course + " | " + ExamsToString + " | " + OffsetToString + " | " + MiddleMark;
+    }
 }
