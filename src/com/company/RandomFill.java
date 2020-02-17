@@ -37,8 +37,8 @@ public class RandomFill {
                 Forenames[random.nextInt(Forenames.length)],
                 Fatherlands[random.nextInt(Fatherlands.length)],
                 Addreses[random.nextInt(Addreses.length)],
-                random.nextInt(100),
-                random.nextInt(100)
+                random.nextInt(1000000),
+                random.nextInt(1000000)
         );
     }
 }

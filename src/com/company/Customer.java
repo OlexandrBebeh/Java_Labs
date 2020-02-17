@@ -89,6 +89,4 @@ public class Customer {
                  CreditCard + " | " +
                  BankAccount;
     }
-
-
 }

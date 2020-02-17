@@ -14,11 +14,11 @@ public class Validator {
             max = min;
             min = temp;
         }
-        if(min < 0 || min > 100){
+        if(min < 0 || min > 1000000){
             System.out.println("Wrong range!");
             return false;
         }
-        if (max < 0 || max > 100){
+        if (max < 0 || max > 1000000){
             System.out.println("Wrong range!");
             return false;
         }

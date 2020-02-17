@@ -46,10 +46,17 @@ public class View {
                 ShowCustomers.Show(sorted);
             }
             if(command == 2){
-                int min=0,max=0;
+                int     min=input.nextInt(),
+                        max=input.nextInt();;
 
                 if(Validator.CheckRange(min,max)){
                     Customer[] CustomersInRange = Inquiries.GetInRAnge(customers,min,max);
+                    if(CustomersInRange != null) {
+                        ShowCustomers.Show(CustomersInRange);
+                    }
+                    else {
+                        System.out.println("There isn't any account in this range.");
+                    }
                 }
             }
             if(command == 3) break;
