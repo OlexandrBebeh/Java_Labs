@@ -1,41 +1,57 @@
 package com.company;
 
+import java.util.Scanner;
 
 public class View {
     public static void StartRun(){
-        String command = "";
+        int command = 0;
+
+        Scanner input = new Scanner(System.in);
 
         while(true){
-           if(command == "exit") break;
-           if(command == "start") {
-               int quantity = 20;
+            System.out.println("Select command:" +
+                    "\n1 - Start work" +
+                    "\n2 - Exit");
+            command = input.nextInt();
+           if(command == 2) break;
+           if(command == 1) {
+               System.out.println("Input from 1 to 30:");
+               int quantity = input.nextInt();
 
                if(Validator.CheckCreateCustomers(quantity)){
                    Customer[] customers = new Customer[quantity];
-                   customers = RandomFill.CreateAndFillArray(customers);
+                   RandomFill.CreateAndFillArray(customers);
                    WorkWithCustomers(customers);
                }
            }
         }
+
     }
 
     private static void WorkWithCustomers( Customer[] customers){
-        String command = "";
+        int command = 0;
+
+        Scanner input = new Scanner(System.in);
 
         while (true){
-            if(command == "1"){
+
+            System.out.println("Select command:" +
+                    "\n1 - Get sorted customers" +
+                    "\n2 - Get customers in range of credit card" +
+                    "\n3 - Exit");
+            command = input.nextInt();
+            if(command == 1){
                Customer[] sorted =  Inquiries.GetSortedList(customers);
 
             }
-            if(command == "2"){
+            if(command == 2){
                 int min=0,max=0;
 
                 if(Validator.CheckRange(min,max)){
                     Customer[] CustomersInRange = Inquiries.GetInRAnge(customers,min,max);
                 }
-
-
             }
+            if(command == 3) break;
         }
     }
 
