@@ -21,6 +21,7 @@ public class View {
                if(Validator.CheckCreateCustomers(quantity)){
                    Customer[] customers = new Customer[quantity];
                    RandomFill.CreateAndFillArray(customers);
+                    ShowCustomers.Show(customers);
                    WorkWithCustomers(customers);
                }
            }
@@ -42,7 +43,7 @@ public class View {
             command = input.nextInt();
             if(command == 1){
                Customer[] sorted =  Inquiries.GetSortedList(customers);
-
+                ShowCustomers.Show(sorted);
             }
             if(command == 2){
                 int min=0,max=0;
