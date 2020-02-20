@@ -1,7 +1,23 @@
-package com.company;
+package com.company.view;
 
-public class ShowCustomers {
-    public static void Show(Customer[] list){
+import com.company.customerClass.Customer;
+
+public class View {
+
+    public static void start(){
+            System.out.println("Select command:" +
+                    "\n1 - Start work" +
+                    "\n2 - Exit");
+    }
+
+    public static void workWithCustomers(){
+        System.out.println("Select command:" +
+                    "\n1 - Get sorted customers" +
+                    "\n2 - Get customers in range of credit card" +
+                    "\n3 - Exit");
+    }
+
+    public static void show(Customer[] list){
         System.out.println("Forename     " + " | " +
                 "Surname     " + " | " +
                 "Fatherland        " + " | " +
@@ -17,7 +33,8 @@ public class ShowCustomers {
             System.out.printf("%-18s\n", list[i].getBankAccount());
         }
     }
-    public static void Show(Customer customer){
+
+    public static void show(Customer customer){
         System.out.println("Forename    " + " | " +
                 "Surname    " + " | " +
                 "Fatherland       " + " | " +
@@ -25,5 +42,21 @@ public class ShowCustomers {
                 "CreditCard       " + " | " +
                 "BankAccount      ");
         System.out.println(customer.toString());
+    }
+
+    public static void mistakeInRAnge(){
+        System.out.println("Wrong range! It must be from 0 to 1000000");
+    }
+
+    public static void conditionRangeMin(){
+        System.out.println("Input min:");
+    }
+
+    public static void conditionRangeMax(){
+        System.out.println("Input max:");
+    }
+
+    public static void missingArray(){
+        System.out.println("There isn't any account in this range.");
     }
 }

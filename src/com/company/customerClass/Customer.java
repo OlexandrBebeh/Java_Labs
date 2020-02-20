@@ -1,4 +1,4 @@
-package com.company;
+package com.company.customerClass;
 
 public class Customer {
     private String Surname;
@@ -82,11 +82,11 @@ public class Customer {
 
     public String toString() {
         return
-                Surname + " | " +
-                Forename + " | " +
-                 Fatherland + " | " +
-                Address + " | " +
-                 CreditCard + " | " +
+                Surname + "; " +
+                Forename + "; " +
+                 Fatherland + "; " +
+                Address + "; " +
+                 CreditCard + "; " +
                  BankAccount;
     }
 }

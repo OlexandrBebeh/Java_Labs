@@ -1,13 +1,14 @@
-package com.company;
+package com.company.customerClass;
 
 //import java.util.ArrayList;
 
-import java.lang.reflect.Array;
+import com.company.customerClass.Customer;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
 public class Inquiries {
-    public static Customer[] GetSortedList(Customer[] list){
+    public static Customer[] getSortedList(Customer[] list){
 
         Arrays.sort(list, Comparator.comparing(Customer::getForename));
 //        (Customer a, Customer b) -> {
@@ -15,7 +16,7 @@ public class Inquiries {
 //        });
         return list;
     }
-    public static Customer[] GetInRAnge (Customer[] customers,int min, int max){
+    public static Customer[] getInRAnge(Customer[] customers, int min, int max){
         int quantity=0;
 
         for(int i=0; i< customers.length;i++){
