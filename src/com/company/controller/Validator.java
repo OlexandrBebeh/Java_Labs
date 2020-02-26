@@ -13,21 +13,27 @@ public class Validator {
 
     public static boolean checkRange(int number){
         if(number < 0 || number > 1000000){
-            View.mistakeInRAnge();
+            View.mistakeInRange();
             return false;
         }
         return true;
     }
 
     public static boolean checkRunCommand(int res){
-        return res < 3 && res > 0;
+        if(res < 3 && res > 0) return true;
+        View.wrongCommand();
+        return false;
     }
     public static boolean checkQuantity(int quantity){
-        return quantity >= 1 && quantity <= 30;
+        if(quantity >= 1 && quantity <= 30) return true;
+        View.mistakeInQuantity();
+        return false;
     }
 
     public static boolean checkCustomerCommand(int res){
-        return res < 4 && res > 0;
+        if(res < 4 && res > 0) return true;
+        View.wrongCommand();
+        return false;
     }
 
     public static boolean checkCustomersArray(Customer[] customers){

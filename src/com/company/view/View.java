@@ -44,19 +44,31 @@ public class View {
         System.out.println(customer.toString());
     }
 
-    public static void mistakeInRAnge(){
+    public static void mistakeInRange(){
         System.out.println("Wrong range! It must be from 0 to 1000000");
     }
 
     public static void conditionRangeMin(){
+
         System.out.println("Input min:");
     }
 
     public static void conditionRangeMax(){
+
         System.out.println("Input max:");
     }
 
     public static void missingArray(){
+
         System.out.println("There isn't any account in this range.");
+    }
+
+    public static void wrongCommand(){
+
+        System.out.println("There is wrong command!.");
+    }
+
+    public static void mistakeInQuantity(){
+        System.out.println("There is wrong quantity! It should be from 1 to 30.");
     }
 }

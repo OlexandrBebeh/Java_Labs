@@ -1,7 +1,6 @@
 package com.company.controller;
 
-import com.company.controller.Validator;
-
+import javax.swing.text.View;
 import java.util.Scanner;
 
 public class Provider {
@@ -11,6 +10,7 @@ public class Provider {
         while (true) {
             int res = input.nextInt();
             if (Validator.checkRunCommand(res)) return res;
+
         }
     }
      public int getQuantity(){

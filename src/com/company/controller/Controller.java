@@ -28,6 +28,7 @@ public class Controller {
                 View.show(customers);
 
                 workWithCustomers(customers);
+                continue;
             }
 
             if(res == 2) break;
@@ -62,7 +63,7 @@ public class Controller {
                     min = max;
                     max = temp;
                 }
-                Customer[] customersInRange = Inquiries.getInRAnge(customers,min,max);
+                Customer[] customersInRange = Inquiries.getInRange(customers,min,max);
                 if(Validator.checkCustomersArray(customersInRange)) {
                     View.missingArray();
                 }

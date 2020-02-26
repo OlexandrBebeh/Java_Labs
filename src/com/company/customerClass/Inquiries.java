@@ -16,7 +16,7 @@ public class Inquiries {
 //        });
         return list;
     }
-    public static Customer[] getInRAnge(Customer[] customers, int min, int max){
+    public static Customer[] getInRange(Customer[] customers, int min, int max){
         int quantity=0;
 
         for(int i=0; i< customers.length;i++){
