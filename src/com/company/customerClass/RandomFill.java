@@ -1,12 +1,11 @@
 package com.company.customerClass;
 
-import com.company.customerClass.Customer;
-
 import java.util.Random;
 
 public class RandomFill {
-    public static Customer[] createAndFillArray(Customer[] customers){
-        for (int i = 0; i < customers.length;i++){
+    protected static Customer[] createAndFillArray(int quantity){
+        Customer[] customers = new Customer[quantity];
+        for (int i = 0; i < quantity;i++){
             customers[i] = createCustomer();
         }
         return customers;
@@ -17,19 +16,19 @@ public class RandomFill {
         String[] Names = {"Olexandr", "Kostya", "Roman","Kasparas","Emil",
                 "Hannah","Madison","Ashley","Sarah","Alexis",
                 "Samant", "Jessic","Elizabeth","Taylor","Lauren",
-                "Alysse","Kayla","Abigail","Brian","Oliviy",
-                "Em","Megatron","Grace","Victoriy","Rachel", "Pasha"}; //25
+                "Alysse","Kayl","Abigail","Brian","Oliviy",
+                "Em","Megatron","Grace","Victoriy","Rachel", "Pasha"};
         String[] Forenames = {"Gerega", "Bebeh", "Pischuk",
                 "Martin", "Bred", "Volhovets",
                 "Shevchenko","Taurus", "Virgo",
                 "Fu","Pascal","Bottom",
                 "Mish","Liver","la Ruge",
-                "Wall", "Boolok", "Myroniuk"}; // 17
+                "Wall", "Boolok", "Myroniuk"};
         String[] Fatherlands = {"Olexandrovich", "Romanovich","Kasparasovich","Emiliyovich","Hannahovich",
                 "Madisonovich","Ashleyovich","Sarahovich","Alexisiyovich","Samantovich",
                 "Jessicovich","Elizabethovich","Taylorovich","Laurenovich","Alyssovich",
                 "Kaylovich","Abigailovich","Brianovich","Oliviyovich","Emovich",
-                "Megatronovich","Gracovich","Victoriyovich","Rachelovich","Yaroslavovich"}; //24
+                "Megatronovich","Gracovich","Victoriyovich","Rachelovich","Yaroslavovich"};
         String[] Addreses = {"Polova 26","Igora Melnika 56", "Getmana 17","Street of Roses 152",
                 "Heroiv Chornobila 1","Wolt Sreet 14", "Beregova 16", "Darkwater street 145",
                 "New street 123", "Saolly 146", "Waterfellou 73", "Apple Garden 3",

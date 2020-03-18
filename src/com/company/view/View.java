@@ -4,26 +4,27 @@ import com.company.customerClass.Customer;
 
 public class View {
 
-    public static void start(){
+    public static void startMenu(){
             System.out.println("Select command:" +
-                    "\n1 - Start work" +
-                    "\n2 - Exit");
+                    "\n1 - Random create" +
+                    "\n2 - Download from file" +
+                    "\n3 - Exit");
     }
 
     public static void workWithCustomers(){
         System.out.println("Select command:" +
                     "\n1 - Get sorted customers" +
                     "\n2 - Get customers in range of credit card" +
-                    "\n3 - Exit");
+                    "\n3 - Show customers" +
+                    "\n4 - Delete data" +
+                    "\n5 - Exit");
     }
 
     public static void show(Customer[] list){
-        System.out.println("Forename     " + " | " +
-                "Surname     " + " | " +
-                "Fatherland        " + " | " +
-                "Address             " + " | " +
-                "CreditCard        " + " | " +
-                "BankAccount       ");
+        if(list == null) {
+            System.out.println("Array of users is empty!");
+            return;}
+        properties();
         for(int i = 0; i< list.length; i++){
             System.out.printf("%-13s | ", list[i].getForename());
             System.out.printf("%-12s | ", list[i].getSurname());
@@ -35,40 +36,20 @@ public class View {
     }
 
     public static void show(Customer customer){
-        System.out.println("Forename    " + " | " +
-                "Surname    " + " | " +
-                "Fatherland       " + " | " +
-                "Address            " + " | " +
-                "CreditCard       " + " | " +
-                "BankAccount      ");
         System.out.println(customer.toString());
     }
 
-    public static void mistakeInRange(){
-        System.out.println("Wrong range! It must be from 0 to 1000000");
+    private static void properties() {
+        System.out.println("Forename     " + " | " +
+                "Surname     " + " | " +
+                "Fatherland        " + " | " +
+                "Address             " + " | " +
+                "CreditCard        " + " | " +
+                "BankAccount       ");
     }
 
-    public static void conditionRangeMin(){
-
-        System.out.println("Input min:");
+    public static void printMessage(String message){
+        System.out.println(message);
     }
 
-    public static void conditionRangeMax(){
-
-        System.out.println("Input max:");
-    }
-
-    public static void missingArray(){
-
-        System.out.println("There isn't any account in this range.");
-    }
-
-    public static void wrongCommand(){
-
-        System.out.println("There is wrong command!.");
-    }
-
-    public static void mistakeInQuantity(){
-        System.out.println("There is wrong quantity! It should be from 1 to 30.");
-    }
 }
