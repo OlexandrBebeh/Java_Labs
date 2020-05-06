@@ -1,5 +1,7 @@
 package com.company.customerClass;
 
+import com.company.customerClass.entities.Customer;
+
 import java.util.Random;
 
 public class RandomFill {

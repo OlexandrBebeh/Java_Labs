@@ -1,4 +1,4 @@
-package com.company.customerClass;
+package com.company.customerClass.entities;
 
 public class Customer {
     private String Surname;

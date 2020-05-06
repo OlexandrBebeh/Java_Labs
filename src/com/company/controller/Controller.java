@@ -1,72 +1,57 @@
 package com.company.controller;
 
-import com.company.customerClass.DataWork;
+import com.company.customerClass.service.DataWork;
 import com.company.view.Provider;
 import com.company.view.View;
 
+import java.io.IOException;
+
 public class Controller {
-   static DataWork data = new DataWork();
-   static Provider provider = new Provider();
-    public static void run(){
+   private DataWork data;
+   private Provider provider;
+   final int ENDCOMMAND = 7;
+
+    public void run(){
         int res = 0;
-
-        while(res != 3) {
-            View.startMenu();
-            res = provider.getRunCommand();
-            startMenu(res);
+        try {
+            data = new DataWork();
+        } catch (IOException e){
+            View.printMessage(e.getMessage());
+        }
+        while (res != ENDCOMMAND){
+            View.showWorkMenu();
+            res = provider.getCommand(ENDCOMMAND);
+            executeWorkCommand(res);
         }
     }
 
-    private static void startMenu(int res){
+    private void executeWorkCommand(int res){
         if(res == 1){
-            fillData();
-            workWithData();
-        } else if(res == 2){
-            View.printMessage("Ooops! This function isn't unable! Sorry for this;)");
-        } else {
-            View.printMessage("Ending work...");
-        }
-    }
-    private static void fillData(){
-
-        int quantity = provider.getQuantity();
-        data.dataCreate(quantity);
-    }
-
-    private static void workWithData(){
-        int res = 0;
-        while (res != 5){
-            View.workWithCustomers();
-            res = provider.getCustomerCommand();
-            workCommands(res);
-        }
-    }
-
-    private static void workCommands(int res){
-        if(res == 1){
-            showSorted();
+            View.show(data.sort());
         }else if(res == 2){
-            showInRange();
+            View.show(data.range(provider.getMinMax()));
         } else if(res == 3){
             View.show(data.getCustomers());
         }else if(res == 4){
-            deleteCustomer();
-        } else {
+            data.delete();
+            View.printMessage("Array was delete!");
+        } else if ( res == 5){
+            try {
+                data.storeData(provider.getFileName());
+                View.printMessage("Data stored!");
+            } catch (IOException e){
+                View.printMessage(e.getMessage());
+            }
+        } else if ( res == 6){
+            try {
+                data.readFile(provider.getFileName());
+                View.printMessage("Data has been read from file!");
+            } catch (IOException e){
+                View.printMessage(e.getMessage());
+            }
+        }   else {
             View.printMessage("Exit");
         }
     }
 
-    private static void showSorted(){
-        data.sort();
-        View.show(data.getCustomers());
-    }
-
-    private static void showInRange(){
-        View.show(data.range(provider.getMinMax()));
-    }
-
-    private static void deleteCustomer(){
-        data.delete();
-        View.printMessage("Array was delete!");
-    }
 }

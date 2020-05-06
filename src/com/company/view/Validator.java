@@ -1,38 +1,33 @@
 package com.company.view;
 
-import com.company.customerClass.Customer;
+import com.company.customerClass.entities.Customer;
+import com.company.view.exceptions.NotCurrentDigitException;
+import com.company.view.exceptions.NotCurrentFileNameException;
 
 public class Validator {
 
-    public static boolean checkRange(int number){
-        if(number < 0 || number > 1000000){
-            View.printMessage("There is wrong digit! It must be from 0 to 1000000");
-            return false;
+    public static void isNumber(String str) throws NumberFormatException{
+        String reg = "-?\\d+(\\.\\d+)?";
+            if (!str.matches(reg)) {
+                throw new NumberFormatException("Entered value is not number!");
+            }
+    }
+
+    public static void checkNumber(int res, int RangeMin, int  RangeMax) throws NotCurrentDigitException {
+        if(res > RangeMax || res < RangeMin) {
+            throw new NotCurrentDigitException("Not current number! It must be from " + RangeMin + " to " +  RangeMax);
         }
-        return true;
-    }
-
-    public static boolean checkRunCommand(int res){
-        if(res < 4 && res > 0) return true;
-        View.printMessage("There is wrong command!");
-        View.startMenu();
-        return false;
-    }
-    public static boolean checkQuantity(int quantity){
-        if(quantity >= 1 && quantity <= 30) return true;
-        View.printMessage("There is wrong quantity! It must be from 1 to 30!");
-        return false;
-    }
-
-    public static boolean checkCustomerCommand(int res){
-        if(res < 6 && res > 0) return true;
-        View.printMessage("There is wrong command!");
-        View.workWithCustomers();
-        return false;
     }
 
     public static boolean checkCustomersArray(Customer[] customers){
         return customers == null;
+    }
+
+    public static void correctFileName(String str) throws NotCurrentFileNameException {
+        String reg = ".*\\.json";
+        if(!str.matches(reg)){
+            throw new NotCurrentFileNameException("Name of file is not json format");
+        }
     }
 
     public static boolean swapMinMax(int min,int max){
