@@ -1,13 +1,34 @@
 package com.company;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-    final static int SIZEMATRIX = 3;
+    final static int SIZEMATRIX = 2;
     final static Random random = new Random();
+
+    public static  void main(String[] args) {
+        LinkedList<LinkedList<Integer>> list1 = new LinkedList <>();
+        LinkedList<LinkedList<Integer>> list2 = new LinkedList <>();
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Input length of lists:");
+
+        int sizeList = scan.nextInt();
+
+        for(int i = sizeList; i > 0; i--){
+            list1.add(createRandomList(SIZEMATRIX));
+            list2.add(createRandomList(SIZEMATRIX));
+        }
+        printListOfMatrix(list1);
+        printListOfMatrix(list2);
+
+        LinkedList <LinkedList<Integer>> addedList = addListOfMatrix(list1,list2);
+        LinkedList <LinkedList<Integer>> multiplyList = multiplyListOfMatrix(list1,list2);
+
+        printListOfMatrix(addedList);
+        printListOfMatrix(multiplyList);
+    }
 
     public static void printMatrix(LinkedList<Integer> m){
         System.out.println("{");
@@ -20,7 +41,7 @@ public class Main {
         System.out.println("}");
     }
     public static void printListOfMatrix(LinkedList<LinkedList<Integer>> l){
-        System.out.println("Matrixies:");
+        System.out.println("List of matrix:");
         for (LinkedList<Integer> integers : l) {
             printMatrix(integers);
         }
@@ -88,25 +109,5 @@ public class Main {
 
         return res;
     }
-    public static  void main(String[] args) {
-        LinkedList <LinkedList<Integer>> list1 = new LinkedList <>();
-        LinkedList <LinkedList<Integer>> list2 = new LinkedList <>();
 
-        Scanner scan = new Scanner(System.in);
-
-        int sizeList = scan.nextInt();
-
-        for(int i = sizeList; i > 0; i--){
-            list1.add(createRandomList(SIZEMATRIX));
-            list2.add(createRandomList(SIZEMATRIX));
-        }
-        printListOfMatrix(list1);
-        printListOfMatrix(list2);
-
-        LinkedList <LinkedList<Integer>> addedList = addListOfMatrix(list1,list2);
-        LinkedList <LinkedList<Integer>> multiplyList = multiplyListOfMatrix(list1,list2);
-
-        printListOfMatrix(addedList);
-        printListOfMatrix(multiplyList);
-    }
 }

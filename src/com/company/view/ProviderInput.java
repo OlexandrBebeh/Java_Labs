@@ -5,7 +5,7 @@ import com.company.view.exceptions.NotCurrentFileNameException;
 
 import java.util.Scanner;
 
-public class Provider {
+public class ProviderInput {
     Scanner input = new Scanner(System.in);
 
     public int getCommand(int maxCommand){

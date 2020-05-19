@@ -1,0 +1,47 @@
+package com.company.view;
+
+import com.company.customerClass.entities.Customer;
+
+public class View {
+
+    public static void showWorkMenu(){
+        System.out.println("Select command:" +
+                    "\n1 - Get sorted customers" +
+                    "\n2 - Get customers in range of credit card" +
+                    "\n3 - Show customers" +
+                    "\n4 - Exit");
+    }
+
+    public static void show(Customer[] list){
+        if(list == null || list.length == 0) {
+            System.out.println("There is no users!");
+            return;}
+        showHeader();
+        for (Customer customer : list) {
+            System.out.printf("%-13s | ", customer.getForename());
+            System.out.printf("%-12s | ", customer.getSurname());
+            System.out.printf("%-18s | ", customer.getFatherland());
+            System.out.printf("%-20s | ", customer.getAddress());
+            System.out.printf("%-18s | ", customer.getCreditCard());
+            System.out.printf("%-18s\n", customer.getBankAccount());
+        }
+    }
+
+    public static void show(Customer customer){
+        System.out.println(customer.toString());
+    }
+
+    private static void showHeader() {
+        System.out.println("Forename     " + " | " +
+                "Surname     " + " | " +
+                "Fatherland        " + " | " +
+                "Address             " + " | " +
+                "CreditCard        " + " | " +
+                "BankAccount       ");
+    }
+
+    public static void printMessage(String message){
+        System.out.println(message);
+    }
+
+}
