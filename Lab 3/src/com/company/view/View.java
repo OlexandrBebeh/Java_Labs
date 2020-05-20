@@ -4,13 +4,6 @@ import com.company.customerClass.entities.Customer;
 
 public class View {
 
-    public static void showStartMenu(){
-            System.out.println("Select command:" +
-                    "\n1 - Random create" +
-                    "\n2 - Download from file" +
-                    "\n3 - Exit");
-    }
-
     public static void showWorkMenu(){
         System.out.println("Select command:" +
                     "\n1 - Get sorted customers" +

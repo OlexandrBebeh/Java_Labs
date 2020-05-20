@@ -2,29 +2,35 @@ package com.company.view;
 
 import com.company.customerClass.entities.Customer;
 
-public class View {
+import java.util.Locale;
 
-    public static void showStartMenu(){
-            System.out.println("Select command:" +
-                    "\n1 - Random create" +
-                    "\n2 - Download from file" +
-                    "\n3 - Exit");
+public class View {
+    public static LanguageManager languageManager;
+    static {
+        languageManager = LanguageManager.INSTANCE;
+    }
+    public static void showLanguageMenu(){
+            System.out.println("Select language (default English):" +
+                    "\n1 - Українська" +
+                    "\n2 - 日本語" +
+                    "\n3 - English");
     }
 
     public static void showWorkMenu(){
-        System.out.println("Select command:" +
-                    "\n1 - Get sorted customers" +
-                    "\n2 - Get customers in range of credit card" +
-                    "\n3 - Show customers" +
-                    "\n4 - Delete data" +
-                    "\n5 - Store data to file" +
-                    "\n6 - Load data from file" +
-                    "\n7 - Exit");
+        System.out.println(languageManager.getString("menu_start"));
+        System.out.println(languageManager.getString("menu1"));
+        System.out.println(languageManager.getString("menu2"));
+        System.out.println(languageManager.getString("menu3"));
+        System.out.println(languageManager.getString("menu4"));
+        System.out.println(languageManager.getString("menu5"));
+        System.out.println(languageManager.getString("menu6"));
+        System.out.println(languageManager.getString("menu7"));
+        System.out.println(languageManager.getString("menu8"));
     }
 
     public static void show(Customer[] list){
         if(list == null || list.length == 0) {
-            System.out.println("There is no users!");
+            System.out.println(languageManager.getString("empty_user"));
             return;}
         showHeader();
         for (Customer customer : list) {
@@ -42,15 +48,26 @@ public class View {
     }
 
     private static void showHeader() {
-        System.out.println("Forename     " + " | " +
-                "Surname     " + " | " +
-                "Fatherland        " + " | " +
-                "Address             " + " | " +
-                "CreditCard        " + " | " +
-                "BankAccount       ");
+        System.out.printf("%-13s | ", languageManager.getString("forename"));
+        System.out.printf("%-12s | ", languageManager.getString("surname"));
+        System.out.printf("%-18s | ", languageManager.getString("fatherland"));
+        System.out.printf("%-20s | ", languageManager.getString("address"));
+        System.out.printf("%-18s | ", languageManager.getString("credit_card"));
+        System.out.printf("%-18s\n", languageManager.getString("bank_account"));
     }
 
-    public static void printMessage(String message){
+    public static void printLocalMessage(String message){
+        System.out.println(languageManager.getString(message));
+    }
+
+    public static void changeLanguage(int lan){
+        if(lan == 1){
+            languageManager.changeLanguage(new Locale("uk","UA"));
+        } else if (lan == 2) {
+            languageManager.changeLanguage(new Locale("ja","JP"));
+        }
+    }
+    public static void printMessage (String message){
         System.out.println(message);
     }
 

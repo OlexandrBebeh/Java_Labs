@@ -8,8 +8,6 @@ import java.io.*;
 
 public class FileIOjson {
     public static Customer[] readFile (String fileName) throws IOException, JsonSyntaxException {
-
-
         Gson gson = new Gson();
         StringBuilder customersBuffer = new StringBuilder("");
         Customer[] customers = null;

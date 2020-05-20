@@ -6,28 +6,29 @@ import com.company.view.View;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.IOException;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 public class Controller {
-   private DataWork data;
-   private ProviderInput providerInput = new ProviderInput();
-   final int ENDCOMMAND = 7;
+     private DataWork data;
+     private ProviderInput providerInput = new ProviderInput();
+     final int ENDCOMMAND = 7;
 
 
-    public void run(){
-        int res = 0;
-
-        try {
-            data = new DataWork();
-        } catch (IOException|JsonSyntaxException e) {
-            View.printMessage("File isn`t load");
-            return;
-        }
-        while (res != ENDCOMMAND){
-            View.showWorkMenu();
-            res = providerInput.getCommand(ENDCOMMAND);
-            executeWorkCommand(res);
-        }
-    }
+      public void run(){
+            int res = 0;
+            try {
+                data = new DataWork();
+            } catch (IOException|JsonSyntaxException e) {
+                View.printMessage("File isn`t load");
+                return;
+            }
+            while (res != ENDCOMMAND){
+                View.showWorkMenu();
+                res = providerInput.getCommand(ENDCOMMAND);
+                executeWorkCommand(res);
+            }
+      }
 
     private void executeWorkCommand(int res){
         if(res == 1){

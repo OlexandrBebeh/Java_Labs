@@ -9,14 +9,14 @@ public class Validator {
     public static void isNumber(String str) throws NumberFormatException{
         String reg = "-?\\d+(\\.\\d+)?";
             if (!str.matches(reg)) {
-                throw new NumberFormatException("Entered value is not number!");
+                throw new NumberFormatException("exception_number");
             }
     }
 
-    public static void checkNumber(int res, int RangeMin, int  RangeMax) throws NotCurrentDigitException {
+    public static void checkNumber(int res, int RangeMax, int RangeMin) throws NotCurrentDigitException {
         if(res > RangeMax || res < RangeMin) {
-            throw new NotCurrentDigitException("Not current number! It must be from " + RangeMin + " to " +  RangeMax);
-        }
+            throw new NotCurrentDigitException("exception_range");
+    }
     }
 
     public static boolean checkCustomersArray(Customer[] customers){
@@ -26,7 +26,7 @@ public class Validator {
     public static void correctFileName(String str) throws NotCurrentFileNameException {
         String reg = ".*\\.json";
         if(!str.matches(reg)){
-            throw new NotCurrentFileNameException("Name of file is not json format");
+            throw new NotCurrentFileNameException("exception_format");
         }
     }
 

@@ -1,4 +1,4 @@
-package com.company.customerClass;
+package com.company.customerClass.service;
 
 import com.company.customerClass.entities.Customer;
 
