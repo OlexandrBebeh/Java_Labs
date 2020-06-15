@@ -1,0 +1,41 @@
+2020-06-03 15:59:01,128 - FATAL - Failed open of file
+java.io.FileNotFoundException: .\cust\data\store.json (Системе не удается найти указанный путь)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.company.customerClass.FileIOjson.readFile(FileIOjson.java:14)
+	at com.company.customerClass.service.DataWork.<init>(DataWork.java:19)
+	at com.company.controller.Controller.loadStartArray(Controller.java:94)
+	at com.company.controller.Controller.run(Controller.java:24)
+	at com.company.Main.main(Main.java:9)
+2020-06-03 15:59:27,906 - FATAL - Failed open of file
+java.io.FileNotFoundException: .\cust\data\store.json (Системе не удается найти указанный путь)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at java.io.FileReader.<init>(Unknown Source)
+	at com.company.customerClass.FileIOjson.readFile(FileIOjson.java:14)
+	at com.company.customerClass.service.DataWork.<init>(DataWork.java:19)
+	at com.company.controller.Controller.loadStartArray(Controller.java:94)
+	at com.company.controller.Controller.run(Controller.java:24)
+	at com.company.Main.main(Main.java:9)
+2020-06-03 16:00:36,174 -  INFO - Chosen change language
+2020-06-03 16:00:39,769 -  INFO - Chosen sort array
+2020-06-03 16:00:43,309 -  INFO - Chosen exit
+2020-06-03 16:02:03,080 -  INFO - Chosen exit
+2020-06-03 16:03:42,541 -  INFO - Chosen sort array
+2020-06-03 16:03:48,467 -  INFO - Chosen sort array
+2020-06-03 16:03:55,041 -  INFO - Chosen exit
+2020-06-03 16:04:03,493 -  INFO - Chosen change language
+2020-06-03 16:04:06,098 -  INFO - Chosen exit
+2020-06-03 16:11:33,982 -  INFO - Chosen change language
+2020-06-03 16:11:45,161 -  INFO - Chosen exit
+2020-06-03 16:47:42,284 -  INFO - Chosen exit
+2020-06-03 23:53:37,468 -  INFO - Chosen change language
+2020-06-03 23:53:52,459 -  INFO - Customers successful saved to: .\cust\store.json
+2020-06-03 23:53:52,459 -  INFO - Chosen exit
+2020-06-03 23:53:59,578 -  INFO - Customers successful saved to: .\cust\store.json
+2020-06-03 23:53:59,579 -  INFO - Chosen exit
